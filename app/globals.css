@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-midnight text-ice antialiased;
+}
+
+::selection {
+  background-color: #22D3AA;
+  color: #0F172A;
+}
