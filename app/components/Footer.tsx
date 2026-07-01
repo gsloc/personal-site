@@ -1,3 +1,5 @@
+import Magnetic from './Magnetic';
+
 function ArrowIcon() {
   return (
     <svg
@@ -37,30 +39,36 @@ export default function Footer() {
           solving. Reach out anytime.
         </p>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a
-            href="https://github.com/gsloc"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
-          >
-            GitHub
-            <ArrowIcon />
-          </a>
+          <Magnetic>
+            <a
+              href="https://github.com/gsloc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
+            >
+              GitHub
+              <ArrowIcon />
+            </a>
+          </Magnetic>
           {/* TODO: replace with real LinkedIn URL */}
-          <a
-            href="#"
-            className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
-          >
-            LinkedIn
-            <ArrowIcon />
-          </a>
-          <a
-            href="mailto:gsloc@unc.edu"
-            className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
-          >
-            Email
-            <ArrowIcon />
-          </a>
+          <Magnetic>
+            <a
+              href="#"
+              className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
+            >
+              LinkedIn
+              <ArrowIcon />
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a
+              href="mailto:gsloc@unc.edu"
+              className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
+            >
+              Email
+              <ArrowIcon />
+            </a>
+          </Magnetic>
         </div>
         <p className="mt-8 text-xs text-slate/60">
           Garrett Slocumb · Built in Chapel Hill · {year}

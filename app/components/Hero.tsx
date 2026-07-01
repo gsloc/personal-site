@@ -1,3 +1,5 @@
+import Magnetic from './Magnetic';
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col items-start justify-center relative">
@@ -16,18 +18,22 @@ export default function Hero() {
         improve the private seller / private buyer experience.
       </p>
       <div className="mt-8 flex items-center gap-4">
-        <a
-          href="#work"
-          className="rounded-lg bg-indigo px-6 py-3 text-ice font-medium hover:bg-indigo/90 transition-colors"
-        >
-          View my work
-        </a>
-        <a
-          href="#contact"
-          className="rounded-lg border border-slate/40 px-6 py-3 text-slate font-medium hover:border-ice hover:text-ice transition-colors"
-        >
-          Get in touch
-        </a>
+        <Magnetic>
+          <a
+            href="#work"
+            className="rounded-lg bg-indigo px-6 py-3 text-ice font-medium hover:bg-indigo/90 transition-colors"
+          >
+            View my work
+          </a>
+        </Magnetic>
+        <Magnetic>
+          <a
+            href="#contact"
+            className="rounded-lg border border-slate/40 px-6 py-3 text-slate font-medium hover:border-ice hover:text-ice transition-colors"
+          >
+            Get in touch
+          </a>
+        </Magnetic>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg

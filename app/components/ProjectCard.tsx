@@ -1,3 +1,5 @@
+import Magnetic from './Magnetic';
+
 export type ProjectStatus = 'shipped' | 'in-progress' | 'coming-soon';
 
 export interface ProjectLink {
@@ -52,7 +54,7 @@ export default function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="relative rounded-2xl bg-surface border-[0.5px] border-slate/20 p-8 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-indigo/40 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.4)]">
+    <div className="project-card-glow relative rounded-2xl bg-surface border-[0.5px] border-slate/20 p-8 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-indigo/40 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.4)]">
       {status !== 'shipped' && (
         <span
           className={`absolute top-8 right-8 font-mono text-[10px] uppercase tracking-wide px-2 py-1 rounded ${statusClasses[status]}`}
@@ -75,16 +77,17 @@ export default function ProjectCard({
       {links.length > 0 && (
         <div className="mt-4 flex items-center gap-4">
           {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
-            >
-              {link.label}
-              <ArrowIcon />
-            </a>
+            <Magnetic key={link.label} strength={0.2}>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link flex items-center gap-1 text-aurora text-sm font-medium"
+              >
+                {link.label}
+                <ArrowIcon />
+              </a>
+            </Magnetic>
           ))}
         </div>
       )}
