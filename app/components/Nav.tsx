@@ -26,7 +26,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-midnight/80 backdrop-blur-sm border-b border-slate/10'
           : 'bg-transparent border-b border-transparent'
