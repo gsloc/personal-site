@@ -1,28 +1,16 @@
 import Magnetic from './Magnetic';
+import { Project } from '../data/projects';
 
-export type ProjectStatus = 'shipped' | 'in-progress' | 'coming-soon';
+export type ProjectCardProps = Omit<Project, 'sortOrder' | 'slug'>;
 
-export interface ProjectLink {
-  label: string;
-  href: string;
-}
-
-export interface ProjectCardProps {
-  title: string;
-  description: string;
-  tags: string[];
-  status: ProjectStatus;
-  links: ProjectLink[];
-}
-
-const statusLabel: Record<Exclude<ProjectStatus, 'shipped'>, string> = {
+const statusLabel: Record<Exclude<Project['status'], 'shipped'>, string> = {
+  'currently-building': 'Currently building',
   'in-progress': 'In progress',
-  'coming-soon': 'Coming soon',
 };
 
-const statusClasses: Record<Exclude<ProjectStatus, 'shipped'>, string> = {
+const statusClasses: Record<Exclude<Project['status'], 'shipped'>, string> = {
+  'currently-building': 'bg-aurora text-midnight',
   'in-progress': 'text-aurora bg-aurora/10',
-  'coming-soon': 'text-slate bg-slate/10',
 };
 
 function ArrowIcon() {
@@ -54,7 +42,7 @@ export default function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="project-card-glow relative rounded-2xl bg-surface border-[0.5px] border-slate/20 p-8 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-indigo/40 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.4)]">
+    <div className="relative rounded-2xl bg-surface border-[0.5px] border-slate/20 p-8 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-indigo/40 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.4)]">
       {status !== 'shipped' && (
         <span
           className={`absolute top-8 right-8 font-mono text-[10px] uppercase tracking-wide px-2 py-1 rounded ${statusClasses[status]}`}
