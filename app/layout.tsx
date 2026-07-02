@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import CustomCursor from './components/CustomCursor';
+import FlowFieldCanvas from './components/FlowFieldCanvas';
 import './globals.css';
 
 const inter = Inter({
@@ -37,8 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="bg-midnight text-ice antialiased font-sans">
+        <FlowFieldCanvas />
+        <div className="relative z-10">{children}</div>
         <CustomCursor />
-        {children}
       </body>
     </html>
   );
