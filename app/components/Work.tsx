@@ -1,4 +1,5 @@
 import ProjectCard from './ProjectCard';
+import StreakBar from './StreakBar';
 import { projects } from '../data/projects';
 
 export default function Work() {
@@ -20,6 +21,9 @@ export default function Work() {
         {sortedProjects.map(({ slug, sortOrder, ...cardProps }) => (
           <ProjectCard key={slug} {...cardProps} />
         ))}
+      </div>
+      <div className="mt-16">
+        <StreakBar />
       </div>
     </section>
   );

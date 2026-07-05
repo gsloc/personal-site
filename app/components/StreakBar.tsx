@@ -77,7 +77,7 @@ export default function StreakBar() {
   }
 
   const containerClass =
-    'w-[280px] rounded-xl bg-surface/80 backdrop-blur-md border border-slate/20 p-3 shadow-lg';
+    'w-full rounded-xl bg-surface/60 border border-slate/10 py-5 px-6 shadow-lg';
 
   if (state.status === 'loading') {
     return (
@@ -116,29 +116,40 @@ export default function StreakBar() {
 
   return (
     <Wrapper className={containerClass} {...wrapperMotionProps}>
-      <p className="font-mono text-[10px] uppercase tracking-widest text-aurora">
-        SHIPPING STREAK
-      </p>
-      <div className="mt-2">
-        {overdue ? (
-          <span className="text-xl font-bold uppercase text-red-500">OVERDUE</span>
-        ) : (
-          <span>
-            <span className="text-[32px] font-bold text-ice">{daysRemaining}</span>{' '}
-            <span className="text-xs text-slate">days left</span>
-          </span>
-        )}
+      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+        <div className="w-full md:w-1/4 md:min-w-[200px]">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-aurora">
+            SHIPPING STREAK
+          </p>
+          <div className="mt-2">
+            {overdue ? (
+              <span className="text-xl font-bold uppercase text-red-500">
+                OVERDUE
+              </span>
+            ) : (
+              <span>
+                <span className="text-[32px] font-bold text-ice">
+                  {daysRemaining}
+                </span>{' '}
+                <span className="text-xs text-slate">days left</span>
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="w-full md:flex-1 md:min-w-0 flex items-center">
+          <div className="h-1.5 w-full rounded-full bg-slate/10 overflow-hidden">
+            <BarInner
+              className="h-full rounded-full"
+              style={{ width: `${width}%`, backgroundColor: color }}
+              {...barMotionProps}
+            />
+          </div>
+        </div>
+        <p className="w-full md:w-1/3 md:max-w-[360px] md:min-w-0 text-left md:text-right text-[11px] overflow-hidden text-ellipsis whitespace-nowrap">
+          <span className="text-slate/60">Last:</span>{' '}
+          <span className="text-slate">&quot;{message}&quot;</span>
+        </p>
       </div>
-      <div className="mt-3 h-1.5 w-full rounded-full bg-slate/10 overflow-hidden">
-        <BarInner
-          className="h-full rounded-full"
-          style={{ width: `${width}%`, backgroundColor: color }}
-          {...barMotionProps}
-        />
-      </div>
-      <p className="mt-3 text-[11px] text-slate overflow-hidden text-ellipsis whitespace-nowrap">
-        Last: &quot;{message}&quot;
-      </p>
     </Wrapper>
   );
 }
