@@ -3,17 +3,17 @@ import Magnetic from './Magnetic';
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col items-start justify-center relative">
-      <p className="font-mono text-xs uppercase tracking-widest text-aurora">
+      <p className="font-mono text-sm uppercase tracking-widest text-aurora">
         HELLO — I&apos;M
       </p>
-      <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-ice">
+      <h1 className="mt-4 text-5xl md:text-6xl lg:text-7xl font-semibold text-ice hero-text-shadow">
         Garrett Slocumb
       </h1>
-      <p className="mt-4 text-lg md:text-xl lg:text-2xl font-normal text-slate">
+      <p className="mt-4 text-xl lg:text-3xl font-normal text-[#E2E8F0] hero-text-shadow">
         Builder, entrepreneur, and innovator.
       </p>
       <hr className="w-[60px] my-8 border-t border-slate/20" />
-      <p className="text-sm md:text-base text-slate">
+      <p className="text-sm md:text-base text-[#CBD5E1]">
         <span className="font-mono">Currently —</span> Building a platform to
         improve the private seller / private buyer experience.
       </p>
