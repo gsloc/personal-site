@@ -28,8 +28,9 @@ export const projects: Project[] = [
     tags: ['Next.js', 'TypeScript', 'Google Gemini', 'Tailwind'],
     status: 'in-progress',
     links: [
-      { label: 'GitHub', href: 'https://github.com/gsloc/HOOKUP_AI.project' },
-    ],
+  { label: 'Live demo', href: 'https://hookup-ai-project.vercel.app' },
+  { label: 'GitHub', href: 'https://github.com/gsloc/HOOKUP_AI.project' },
+],
     sortOrder: 2,
   },
   {
