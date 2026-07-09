@@ -24,13 +24,13 @@ export const projects: Project[] = [
   {
     slug: 'hookup-ai',
     title: 'HOOKUP AI',
-    description: 'An AI-powered fishing assistant that recommends what to fish, when, and where — based on real-time weather, tides, and location. Currently building Phase 3.',
-    tags: ['Next.js', 'TypeScript', 'Google Gemini', 'Tailwind'],
-    status: 'in-progress',
+    description: 'An AI-powered fishing assistant that recommends what to fish, when, and where — with live weather from Open-Meteo, tide predictions from NOAA, and browser geolocation.',
+    tags: ['Next.js', 'TypeScript', 'Google Gemini', 'Tailwind', 'Open-Meteo', 'NOAA'],
+    status: 'shipped',
     links: [
-  { label: 'Live demo', href: 'https://hookup-ai-project.vercel.app' },
-  { label: 'GitHub', href: 'https://github.com/gsloc/HOOKUP_AI.project' },
-],
+      { label: 'Live demo', href: 'https://hookup-ai-project.vercel.app' },
+      { label: 'GitHub', href: 'https://github.com/gsloc/HOOKUP_AI.project' },
+    ],
     sortOrder: 2,
   },
   {
